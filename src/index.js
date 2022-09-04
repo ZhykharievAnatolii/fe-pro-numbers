@@ -32,13 +32,13 @@ export const getSquareOfCircle = (radius)=>{ return radius*radius*Math.PI};
  * @returns {number}
  */
 export const getFixedValue = (number, accuracy) => {
-        // if (Number.isInteger(accuracy)) {
-        //     const shift = Math.pow(10, accuracy);
-        //     return (Math.round( number * shift + 0.00000000000001 ) / shift);
-        // } else {
-        //     return Math.round(number);
-        // }
-    return +number.toFixed(accuracy)
+        if (Number.isInteger(accuracy)) {
+            const shift = Math.pow(10, accuracy);
+            return (Math.round( number * shift + 0.00000000000001 ) / shift);
+        } else {
+            return Math.round(number);
+        }
+    // return +number.toFixed(accuracy)
 };
 
 /**
